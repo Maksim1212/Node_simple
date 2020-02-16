@@ -1,0 +1,7 @@
+.history
+.vscode
+.git
+node_modules/
+.netbeans
+.idea
+.node_history
