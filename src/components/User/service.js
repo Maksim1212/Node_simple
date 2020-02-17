@@ -10,5 +10,9 @@ module.exports = {
      */
     async findAll() {
         return await UserModel.find({});
+    },
+
+    async createUser() {
+        return await UserModel.save({});
     }
 };

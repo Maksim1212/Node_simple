@@ -18,7 +18,7 @@ const router = Router();
  */
 router.get('/', UserComponent.findAll);
 // router.get('/v1/users/find', UserComponent.findUser);
-router.post('/v1/users/create', UserComponent.createUser);
+router.post('/', UserComponent.createUser);
 // router.put('/v1/users/update', UserComponent.updateUser);
 // router.delete('/v1/users/delete', UserComponent.deleteUser);
 

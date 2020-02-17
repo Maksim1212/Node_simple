@@ -12,20 +12,17 @@ async function findAll(req, res, next) {
         const users = await UserService.findAll();
 
         res.status(200).json(users);
+        console.log('findAll ok')
     } catch (error) {
         next(error);
     }
 }
 
-async function createUser(req, res, next) {
-    const user = new UserModel(req.body)
-    try {
-        await user.save();
-        res.send(user);
-    } catch (err) {
-        res.status(500).send(err);
-    }
-}
+async function createUser(req, res) {
+    console.log(req.body);
+
+};
+
 
 module.exports = {
     findAll,

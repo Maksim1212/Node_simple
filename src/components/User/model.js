@@ -4,12 +4,14 @@ const connections = require('../../config/connection');
 const UserSchema = new Schema({
     email: {
         type: String,
-        trim: true
+        trim: true,
+        default: 'default@default.df'
     },
     fullName: {
         type: String,
         requiredPaths: true,
-        trim: true
+        trim: true,
+        default: 'default'
     }
 }, {
     collection: 'usermodel',
