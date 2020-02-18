@@ -18,9 +18,24 @@ async function findAll(req, res, next) {
     }
 }
 
-async function createUser(req, res) {
-    console.log(req.body);
-
+async function createUser(req, res, next) {
+    try {
+        console.log(req.body);
+        const user = await UserService.save(req.body);
+        res.status(200).json(user);
+        console.log(user);
+    } catch (error) {
+        next(error);
+    }
+    // const user = new UserService({
+    //     email: req.body.email,
+    //     fullName: req.body.fullName
+    // });
+    // user.save(function(error) {
+    //     if (error) {
+    //         return next(error);
+    //     }
+    // })
 };
 
 
