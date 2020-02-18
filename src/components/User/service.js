@@ -13,6 +13,6 @@ module.exports = {
     },
 
     async createUser() {
-        return await UserModel.save({});
+        return await UserModel.create({});
     }
 };

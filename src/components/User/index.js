@@ -20,9 +20,10 @@ async function findAll(req, res, next) {
 
 async function createUser(req, res, next) {
     try {
-        console.log(req.body);
-        const user = await UserService.save(req.body);
-        res.status(200).json(user);
+        //console.log(req.body);
+        console.log(req.body.email)
+        const user = await UserService.createUser(req.body);
+        res.send(user);
         console.log(user);
     } catch (error) {
         next(error);
