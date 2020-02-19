@@ -17,9 +17,9 @@ const router = Router();
  * @param {callback} middleware - Express middleware.
  */
 router.get('/', UserComponent.findAll);
-// router.get('/find', UserComponent.findUser);
+router.get('/find', UserComponent.findUser);
 router.post('/create', UserComponent.createUser);
-// router.put('/update', UserComponent.updateUser);
-// router.delete('/delete', UserComponent.deleteUser);
+router.put('/update', UserComponent.updateUser);
+router.delete('/delete', UserComponent.deleteUser);
 
 module.exports = router;

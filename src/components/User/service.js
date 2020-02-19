@@ -14,5 +14,18 @@ module.exports = {
 
     async createUser(user) {
         return await UserModel.create(user);
+    },
+
+    async findUser(email) {
+        return await UserModel.findOne({ email })
+            // return await UserModel.find({ email }) // find all users fith searching email
+    },
+
+    async updateUser(user) {
+        return await UserModel.updateOne({})
+    },
+
+    async deleteUser(user) {
+        return await UserModel.deleteOne({})
     }
 };

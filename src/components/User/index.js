@@ -30,11 +30,32 @@ async function createUser(req, res, next) {
 
     } catch (error) {
         next(error);
-        // res.status(500);
+        res.status(500).send('Invalid JSON string');;
     }
 };
 
+async function findUser(req, res, next) {
+    try {
+        const user = await UserService.findUser(req.body.email)
+        console.log(user);
+        res.status(200).json(user);
+    } catch (error) {
+        next(error);
+    }
+}
+
+async function updateUser(req, res, next) {
+
+}
+
+async function deleteUser(req, res, next) {
+
+}
+
 module.exports = {
     findAll,
-    createUser
+    createUser,
+    findUser,
+    updateUser,
+    deleteUser
 }
