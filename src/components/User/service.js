@@ -25,7 +25,7 @@ module.exports = {
         return await UserModel.updateOne({})
     },
 
-    async deleteUser(user) {
-        return await UserModel.deleteOne({})
+    async deleteUser(email) {
+        return await UserModel.deleteOne({ email })
     }
 };

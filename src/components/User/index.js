@@ -49,7 +49,13 @@ async function updateUser(req, res, next) {
 }
 
 async function deleteUser(req, res, next) {
-
+    try {
+        const user = await UserService.deleteUser(req.body.email)
+        console.log(user);
+        res.status(200).json(user);
+    } catch (error) {
+        next(error);
+    }
 }
 
 module.exports = {
