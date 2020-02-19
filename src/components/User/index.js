@@ -45,6 +45,17 @@ async function findUser(req, res, next) {
 }
 
 async function updateUser(req, res, next) {
+    try {
+        const user = {
+            email: req.body.email,
+            fullName: req.body.fullName
+        };
+        await UserService.updateUser(user)
+        console.log(user);
+        res.status(200).json(user);
+    } catch (error) {
+        next(error);
+    }
 
 }
 

@@ -22,7 +22,9 @@ module.exports = {
     },
 
     async updateUser(user) {
-        return await UserModel.updateOne({})
+        return await UserModel.updateOne({ email: user.email }, {
+            fullName: user.fullName
+        });
     },
 
     async deleteUser(email) {
