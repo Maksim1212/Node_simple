@@ -20,25 +20,19 @@ async function findAll(req, res, next) {
 
 async function createUser(req, res, next) {
     try {
-        //console.log(req.body);
-        console.log(req.body.email)
-        const user = await UserService.createUser(req.body);
-        res.send(user);
+        const user = {
+            email: req.body.email,
+            fullName: req.body.fullName
+        };
+        await UserService.createUser(user)
+        res.status(200).json(user);
         console.log(user);
+
     } catch (error) {
         next(error);
+        // res.status(500);
     }
-    // const user = new UserService({
-    //     email: req.body.email,
-    //     fullName: req.body.fullName
-    // });
-    // user.save(function(error) {
-    //     if (error) {
-    //         return next(error);
-    //     }
-    // })
 };
-
 
 module.exports = {
     findAll,

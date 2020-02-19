@@ -12,7 +12,7 @@ module.exports = {
         return await UserModel.find({});
     },
 
-    async createUser() {
-        return await UserModel.create({});
+    async createUser(user) {
+        return await UserModel.create(user);
     }
 };
