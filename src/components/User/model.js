@@ -5,7 +5,7 @@ const UserSchema = new Schema({
     email: {
         type: String,
         trim: true,
-        default: 'default@default.df' // default user email
+        default: 'test@default.com' // default user email
     },
     fullName: {
         type: String,
