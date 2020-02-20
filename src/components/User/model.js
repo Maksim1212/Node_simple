@@ -5,16 +5,16 @@ const UserSchema = new Schema({
     email: {
         type: String,
         trim: true,
-        default: 'default@default.df'
+        default: 'default@default.df' // default user email
     },
     fullName: {
         type: String,
         requiredPaths: true,
         trim: true,
-        default: 'default'
+        default: 'default' // default user name
     }
 }, {
-    collection: 'usermodel',
+    collection: 'usermodel', // db collection
     versionKey: false
 });
 
