@@ -30,7 +30,7 @@ async function createUser(req, res, next) {
     try {
         const { error } = await Joi.creationSchema.validate(req.body);
         if (error) {
-            res.status(500).send(error);
+            res.status(400).send(error);
         }
         const user = {
             email: req.body.email,
@@ -55,13 +55,13 @@ async function findUser(req, res, next) {
     try {
         const { error } = await Joi.findSchema.validate(req.body);
         if (error) {
-            res.status(500).send(error);
+            res.status(400).send(error);
         }
         const user = await UserService.findUser(req.body.email) //find user to user Email
         console.log(user);
         res.status(200).json(user);
     } catch (error) {
-        // res.status(500).send(error);
+        // res.status(400).send(error);
         next(error);
     }
 }
@@ -77,7 +77,7 @@ async function updateUser(req, res, next) {
     try {
         const { error } = await Joi.creationSchema.validate(req.body);
         if (error) {
-            res.status(500).send(error);
+            res.status(400).send(error);
         }
         const user = {
             email: req.body.email,
@@ -102,7 +102,7 @@ async function deleteUser(req, res, next) {
     try {
         const { error } = await Joi.findSchema.validate(req.body); // use validation
         if (error) {
-            res.status(500).send(error);
+            res.status(400).send(error);
         }
         const user = await UserService.deleteUser(req.body.email) // delete one user 
         res.status(200).json(user);
